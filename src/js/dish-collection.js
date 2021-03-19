@@ -3,11 +3,11 @@ import filterTpl from '../templates/filter.hbs';
 import menu from '../data/menu.json';
 
 const menuContainer = document.querySelector('.js-menu');
-const filter = document.querySelector('.filter');
+const filterContainer = document.querySelector('.filter');
 
-filter.insertAdjacentHTML('beforeend', createFilterMarkup(menu));
+filterContainer.insertAdjacentHTML('beforeend', createFilterMarkup(menu));
 
-filter.addEventListener('click', onFilterButtonClick);
+filterContainer.addEventListener('click', onFilterButtonClick);
 
 createMarkup(menu);
 
