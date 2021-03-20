@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'condition';
+const STORAGE_KEY = 'theme';
 
 const Theme = {
   LIGHT: 'light-theme',
@@ -18,15 +18,14 @@ function onCheckboxChange(e) {
   refs.body.classList.toggle(Theme.DARK);
   refs.body.classList.toggle(Theme.LIGHT);
 
-  const condition = e.target.checked;
-
-  localStorage.setItem(STORAGE_KEY, condition);
+  const checked = e.target.checked;
+  checked ? localStorage.setItem(STORAGE_KEY, Theme.DARK) : localStorage.setItem(STORAGE_KEY, Theme.LIGHT);
 }
 
 function themeChecker() {
-  const condition = localStorage.getItem(STORAGE_KEY);
+  const theme = localStorage.getItem(STORAGE_KEY);
 
-  if (condition === 'true') {
+  if (theme === 'dark-theme') {
     refs.body.classList.add(Theme.DARK);
     refs.checkbox.checked = true;
   } else {
